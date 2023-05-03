@@ -1,0 +1,168 @@
+@import '../../styles/variables.scss';
+
+.preview {
+  height: 240px;
+  background-image: url('../../images/bg-main-mobile.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 2rem 1rem;
+
+  letter-spacing: 1.3px;
+  color: $clr-100;
+  font-size: $fs-accent;
+
+  @media (min-width: 480px) {
+    border-radius: 0 0 20px 20px;
+  }
+
+  @media (min-width: $desktop) {
+    border-radius: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    background-image: url('../../images/bg-main-desktop.png');
+    width: 483px;
+    padding-left: 164px;
+  }
+
+  &__back, &__front {
+    height: 157px;
+    width: 286px;
+    background-size: 100%;
+
+    @media (min-width: $desktop) {
+      height: 245px;
+      width: 447px;
+      filter: drop-shadow(0px 39px 60px rgba(0, 0, 0, 0.142481));
+    }
+  }
+  
+  &__back {
+    background-image: url('../../images/bg-card-back.png');
+    margin-left: auto;
+    margin-right: 0;
+    position: relative;
+
+    @media (min-width: $desktop) {
+      margin: 0;
+      transform: translateX(94px);
+    }
+
+    &CVC {
+      position: absolute;
+      letter-spacing: 1.3px;
+      top: 72px;
+      right: 35px;
+
+      @media (min-width: $desktop) {
+        font-size: $fs-accent-desktop;
+        letter-spacing: 2px;
+        top: 111px;
+        right: 57px;  
+      }
+    }
+  }
+  &__front {
+    background-image: url('../../images/bg-card-front.png');
+    filter: drop-shadow(0px 39px 60px rgba(0, 0, 0, 0.142481));
+    margin-top: -63px;
+    position: relative;
+
+    @media (min-width: $desktop) {
+      margin: 0;
+      margin-bottom: 37px;
+    }
+
+    &Name {
+      text-transform: uppercase;
+      position: absolute;
+      letter-spacing: 1.3px;
+      bottom: 20px;
+      left: 19px;
+
+      @media (min-width: $desktop) {
+        font-size: $fs-accent-desktop;
+        letter-spacing: 2px;
+        bottom: 26px;
+        left: 32px;
+      }
+    }
+
+    &Date {
+      position: absolute;
+      display: flex;
+      bottom: 20px;
+      right: 21px;
+
+      span { display: block; }
+
+      @media (min-width: $desktop) {
+        font-size: $fs-accent-desktop;
+        letter-spacing: 2px;
+        bottom: 26px;
+        right: 32px;
+      }
+    }
+
+    &Number {
+      position: absolute;
+      bottom: 48px;
+      left: 19px;
+      font-size: $fs-input;
+      letter-spacing: 2.2px;
+
+      @media (min-width: $desktop) {
+        font-size: $fs-input-desktop;
+        letter-spacing: 3.4px;
+        bottom: 70px;
+        left: 32px;
+      }
+    }
+
+    &::after, &::before {
+      position: absolute;
+      content: '';
+      border-radius: 50%;
+      aspect-ratio: 1 / 1;
+    }
+
+    &::after {
+      width: 30px;
+      background: $clr-100;
+      top: 18px;
+      left: 19px;
+
+      @media (min-width: $desktop) {
+        width: 47px;
+        top: 28px;
+        left: 32px;
+      }
+    }
+
+    &::before {
+      width: 13px;
+      border: 1px solid $clr-100;
+      top: 26px;
+      left: 60px;
+
+      @media (min-width: $desktop) {
+        width: 21px;
+        top: 41px;
+        left: 95px;
+      }
+    }
+  }
+
+}
+
+.flip {
+  animation: flip 1s linear infinite;
+}
+
+@keyframes flip {
+  100% {
+    transform: rotateX(360deg);
+  }
+}

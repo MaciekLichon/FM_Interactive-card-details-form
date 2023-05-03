@@ -1,0 +1,25 @@
+@import './variables.scss';
+
+body {
+  font-family: $ff-regular;
+  font-size: $fs-fieldname;
+  font-weight: $fw-regular;
+  color: $clr-400;
+}
+
+main {
+  max-width: 500px;
+  margin: 0 auto;
+
+  @media (min-width: $desktop) {
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+    max-width: 1440px;
+  }
+
+  @media (min-width: 1200px) {
+    justify-content: normal;
+    gap: 350px;
+  }
+}
