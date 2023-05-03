@@ -1,6 +1,7 @@
 {
   "name": "interactive-card-details-form",
   "version": "0.1.0",
+  "homepage": "https://macieklichon.github.io/FM_Interactive-card-details-form/",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
